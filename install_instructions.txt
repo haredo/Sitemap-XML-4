@@ -1,0 +1,117 @@
+# SitemapXML v4 
+==================
+Author:  Andrew Berezin 
+
+Modified for Zen-Cart Version 1.5.7 by: davewest (CowboyGeek.com)
+
+## Description
+This Script generates a Sitemap as described here:
+http://www.sitemaps.org/
+http://support.google.com/webmasters/bin/answer.py?hl=en&answer=156184&topic=8476&ctx=topic
+
+Zen-Cart Version
+--------------
+1.5.7  and up only tested PHP7.4 and 7.3 Only
+
+order version Support thread 
+--------------
+http://www.zen-cart.com/showthread.php?126810-SitemapXML-v-2
+
+New Support thread
+-----------------
+https://www.zen-cart.com/showthread.php?227246-SitemapXML-v4-Support-thread&p=1373358#post1373358
+
+GitHub location
+---------------
+https://github.com/davesaddle/SitemapXML
+
+Affected files
+--------------
+None
+
+Affects DB
+--------------
+Yes (creates new records into configuration_group, configuration and admin_pages tables).
+
+DISCLAIMER
+--------------
+Backup your ZenCart database and any and all applicable files before proceeding.
+You download and use at your own risk and all that s...
+I don't have a business in web design and so have no need to degrade code for older stores or bad versions of PHP. 
+There are others who do have a business and provide such support.
+If you truly have an issue, ask, There's a donate button on my web site, coffee is not cheep!
+
+Features:
+--------------
+* supports Search-Engine Safe URLs (including MagicSeo)
+* could be accessed by http or command line
+* auto-generates multiple sitemaps for sites with over 50.000 URLs
+* auto-generates multiple sitemaps if filesize exceeded 10MB
+* writes files compressed or uncompressed (You can use the gzip feature or compress your Sitemap files using gzip)
+* using index.php wrapper - http://domain.com/index.php?main_page=sitemapxml
+* using languages file and etc.
+* auto-notify Google and other SE.
+* generation of a sitemap index file
+* generation of xml-sitemaps for (separate files):
+  1. Products with images (supports multilangual products, support hideCategories)
+  2. Categories with images (supports multilangual categories, support hideCategories)
+  3. Manufacturers with images
+  4. Main (Home) page
+  5. Reviews
+  6. EZ-pages
+    * multi-language support,
+    * 'EZ pages rel=nofollow attribute' support (http://www.zen-cart.com/index.php?main_page=product_contrib_info&products_id=944),
+    * 'date_added'/'last_modified' support,
+    * check internal links ('alt_url') by "noindex" rule (main_page in ROBOTS_PAGES_TO_SKIP),
+    * toc_chapter processing
+  7. Testimonial Manager http://www.zen-cart.com/downloads.php?do=file&id=299
+  8. News Box Manager http://www.zen-cart.com/downloads.php?do=file&id=147
+  9. News and Article Manager & Optional Sideboxes http://www.zen-cart.com/downloads.php?do=file&id=791
+  10. Product reviews page
+
+If the products, categories, reviews have not changed since the last generation (time creation corresponding xml-sitemap file), a new xml-sitemap file not created (using existing xml-sitemap).
+
+Priority is calculated on the basis of the positions in the selection from the database, ie the operator ORDER BY in the sql query. First item have priority=1.00, last=0.10. So can no longer be situations where all items in the file have the same priority.
+* Products - ORDER BY p.products_sort_order ASC, last_date DESC
+* Categories - ORDER BY c.sort_order ASC, last_date DESC
+* Reviews - ORDER BY r.reviews_rating ASC, last_date DESC
+* EZ-pages - ORDER BY p.sidebox_sort_order ASC, last_date DESC
+* Testimonials - ORDER BY last_date DESC
+* Box News - ORDER BY last_date DESC
+
+$_GET parameters:
+-------------------------
+ping=yes - Pinging Search Engine Systems.
+
+inline=yes - output file sitemapindex.xml. In Google Webmaster Tools you can define your "Sitemap URL":
+  http://your_domain/index.php?main_page=sitemapxml&inline=yes
+  And every time Google will get index.php?main_page=sitemapxml he will receive a fresh sitemapindex.xml.
+
+genxml=no - don't generate xml-files.
+
+rebuild=yes - force rebuild all sitemap*.xml files.
+
+Install:
+--------------
+0. BACK UP your database & store.
+1. Unzip the SitemapXML package to your local hard drive, retaining the folder structure.
+2. Open the folder ZC157 and upload all files in this folder.  Files outside of this folder is only for your info and help.
+3. Rename the "YOUR_Admin" folder in the "ZC157" folder to match the name of your admin folder.    
+4. Upload the files from "ZC157" to the root of your store. (DO NOT upload the "sitemapXML" folder, just the CONTENTS of this folder ZC157 (copy ALL of the add-on files to your store!! Most issues are caused by store owners who decide to NOT load ALL of the module files)
+5. Set permissions on the directory /sitemap/ to 777.
+6. Once all files are uploaded, go to YOUR_ADMIN Modulus Tab, select Plugins.  In the list of plugins, select SitemapXML and install. 
+7. Go to Admin -> Configuration -> Sitemap XML and setup all parameters.
+8. Go to Admin -> Tools -> Sitemap XML (If error messages occur, change permissions on the XML files to 777).
+9. To have this update and automatically notify Google, you will need to set up a Cron job via your host's control panel.
+
+Upgrade:
+--------------
+0. BACK UP your database & store.
+1. Delete all past files from current install according to the old instructions
+2. follow installation instructions for this mod.  Past SQL well be removed during install.
+
+Un-Install:
+--------------
+1. Go to Admin -> modulus -> SitemapXML and click "Un-Install" button.  This removes the SQL only!
+2. Delete all files that were copied from the installation package.
+
