@@ -95,14 +95,15 @@ Install:
 --------------
 0. BACK UP your database & store.
 1. Unzip the SitemapXML package to your local hard drive, retaining the folder structure.
-2. Open the folder ZC157 and upload all files in this folder.  Files outside of this folder is only for your info and help.
-3. Rename the "YOUR_Admin" folder in the "ZC157" folder to match the name of your admin folder.    
-4. Upload the files from "ZC157" to the root of your store. (DO NOT upload the "sitemapXML" folder, just the CONTENTS of this folder ZC157 (copy ALL of the add-on files to your store!! Most issues are caused by store owners who decide to NOT load ALL of the module files)
-5. Set permissions on the directory /sitemap/ to 777.
-6. Once all files are uploaded, go to YOUR_ADMIN Modulus Tab, select Plugins.  In the list of plugins, select SitemapXML and install. 
-7. Go to Admin -> Configuration -> Sitemap XML and setup all parameters.
-8. Go to Admin -> Tools -> Sitemap XML (If error messages occur, change permissions on the XML files to 777).
-9. To have this update and automatically notify Google, you will need to set up a Cron job via your host's control panel.
+2. Create a directory in the root of your site and name it sitemap.
+3. Open the folder ZC157 and upload all files in this folder.  Files outside of this folder is only for your info and help.
+4. Rename the "YOUR_Admin" folder in the "ZC157" folder to match the name of your admin folder.    
+5. Upload the files inside the "ZC157" folder to the root of your store. (DO NOT upload the "Sitemap-XML-4-main" folder, just the CONTENTS of the ZC157 folder inside it.
+6. Set permissions on the directory /sitemap/ to 777.
+7. Once all files are uploaded, go to YOUR_ADMIN Modulus Tab, select Plugins.  In the list of plugins, select SitemapXML and install. 
+8. Go to Admin -> Configuration -> Sitemap XML and setup all parameters.
+9. Go to Admin -> Tools -> Sitemap XML (If error messages occur, change permissions on the XML files to 777).
+10. To have this update and automatically notify Google, you will need to set up a Cron job via your host's control panel.
 
 Upgrade:
 --------------
