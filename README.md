@@ -10,6 +10,9 @@ http://support.google.com/webmasters/bin/answer.py?hl=en&answer=156184&topic=847
 
 Upgrading this to ZenCart 1.5.7 and php7.4 was not easy.  I'm still in the process of following code flow.  I was considering adding XML template builders for Auctions and Maps, but I did not see anything new in Google instructions.  Still looking.
 
+## Upgrading to Zen Cart 1.5.8
+Simply overwrite the existing 1.5.7 file(s) with those in the ZC158 directory.
+
 ## Disclaimer
 You download and use at your own risk and all that shit...
 I don't have a business in web design and so have no need to degrade code for older stores or bad versions of PHP. 
