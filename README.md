@@ -51,7 +51,7 @@ Looking at adding ROR setup which for products is
 
 ```
  
- With a grater number of types Classified Ad, Auctions, maps would be nice..
+ With a greater number of types Classified Ad, Auctions, maps would be nice..
  
  NOTE:  Recent installations have been done outside the Modules  >>  Plugin Manger solution.  This may result in the sitemap directory being created in the root of your site.  If the directory is not there, create it with the proper permission (755) and go to the mod's page on your site.  Leave the Actions unclicked and run the mod.  If all files look okay, select both actions and run the mod again.
  
