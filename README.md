@@ -13,7 +13,7 @@ Upgrading this to ZenCart 1.5.7 and php7.4 was not easy.  I'm still in the proce
 ## Upgrading to Zen Cart 1.5.8
 Simply overwrite the existing 1.5.7 file(s) with those in the ZC158 directory.
 
-READ THE ISSUES ON GITHUB PRIOR TO LOADING!!!
+**READ THE ISSUES ON GITHUB PRIOR TO LOADING!!!**
 
 ## Disclaimer
 You download and use at your own risk and all that shit...
